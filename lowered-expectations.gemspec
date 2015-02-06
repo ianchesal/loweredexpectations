@@ -22,8 +22,12 @@ Gem::Specification.new do |spec|
   spec.email         = ["ian.chesal@gmail.com"]
   spec.summary       = 'A library for testing versions of command line tools.'
   spec.description   = <<-END
-Test your environment for expected versions of command line tools using
-gem-like expectation syntax.
+A Ruby gem that lets you test for the presence of command line tools and ensure
+that you have a version of the tool that you know how to work with.
+
+It uses the gem system's version matching semantics so you can do things like
+enforce a major version but allow any minor version above a certain value for a
+tool. If you use Gemfile's the syntax should look pretty familiary to you.
 END
   spec.homepage      = "https://github.com/ianchesal/loweredexpectations"
   spec.license       = "Apache 2.0"
