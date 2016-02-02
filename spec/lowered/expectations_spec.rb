@@ -44,7 +44,7 @@ Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM NTLM_WB SSL lib"
 
   describe '.which' do
     it 'returns true when the executable is on the PATH' do
-      expect(LoweredExpectations.which tool).to be_truthy
+      expect(LoweredExpectations.which(tool)).to be_truthy
     end
 
     it 'raises an error when the executable is not on the PATH' do
@@ -54,12 +54,12 @@ Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM NTLM_WB SSL lib"
 
   describe '.verify_version' do
     it 'returns true when the version string matches the version pattern' do
-      expect(LoweredExpectations.verify_version version, '~> 0.1').to        be_truthy
-      expect(LoweredExpectations.verify_version version, '~> 0').to          be_truthy
-      expect(LoweredExpectations.verify_version version, '> 0.1.1').to       be_truthy
-      expect(LoweredExpectations.verify_version version, '< 1').to           be_truthy
-      expect(LoweredExpectations.verify_version version, '> 0').to           be_truthy
-      expect(LoweredExpectations.verify_version version, "= #{version}").to  be_truthy
+      expect(LoweredExpectations.verify_version(version, '~> 0.1')).to        be_truthy
+      expect(LoweredExpectations.verify_version(version, '~> 0')).to          be_truthy
+      expect(LoweredExpectations.verify_version(version, '> 0.1.1')).to       be_truthy
+      expect(LoweredExpectations.verify_version(version, '< 1')).to           be_truthy
+      expect(LoweredExpectations.verify_version(version, '> 0')).to           be_truthy
+      expect(LoweredExpectations.verify_version(version, "= #{version}")).to  be_truthy
     end
 
     it 'raise an error when the version string does not match the version pattern' do

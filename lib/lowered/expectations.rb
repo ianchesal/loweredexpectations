@@ -5,7 +5,7 @@ require 'shellwords'
 require 'pty'
 
 class LoweredExpectations
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'.freeze
 
   class VersionPatternError < StandardError
   end
@@ -54,7 +54,7 @@ class LoweredExpectations
         while !r.eof?
           c = r.getc
           stdout << c
-          $stdout.write "#{c}"
+          $stdout.write c.to_s
         end
         Process.wait(pid)
       end
