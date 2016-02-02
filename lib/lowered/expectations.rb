@@ -33,7 +33,7 @@ class LoweredExpectations
         return exe if File.executable?(exe) && !File.directory?(exe)
       end
     end
-    raise MissingExecutableError.new("#{executable} not found in #{ENV['PATH']}")
+    raise MissingExecutableError.new("#{cmd} not found in #{ENV['PATH']}")
   end
 
   def self.verify_version(version, pattern)

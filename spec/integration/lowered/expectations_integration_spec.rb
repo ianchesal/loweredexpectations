@@ -23,7 +23,7 @@ RSpec.describe LoweredExpectations do
     end
 
     it 'raises an error when the executable is not on the PATH' do
-      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error
+      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error(LoweredExpectations::MissingExecutableError)
     end
   end
 end

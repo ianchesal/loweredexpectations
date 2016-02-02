@@ -48,7 +48,7 @@ Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM NTLM_WB SSL lib"
     end
 
     it 'raises an error when the executable is not on the PATH' do
-      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error
+      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error(LoweredExpectations::MissingExecutableError)
     end
   end
 
