@@ -5,7 +5,7 @@ require 'shellwords'
 require 'pty'
 
 class LoweredExpectations
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'.freeze
 
   class VersionPatternError < StandardError
   end
@@ -33,7 +33,7 @@ class LoweredExpectations
         return exe if File.executable?(exe) && !File.directory?(exe)
       end
     end
-    raise MissingExecutableError.new("#{executable} not found in #{ENV['PATH']}")
+    raise MissingExecutableError.new("#{cmd} not found in #{ENV['PATH']}")
   end
 
   def self.verify_version(version, pattern)
@@ -54,7 +54,7 @@ class LoweredExpectations
         while !r.eof?
           c = r.getc
           stdout << c
-          $stdout.write "#{c}"
+          $stdout.write c.to_s
         end
         Process.wait(pid)
       end
