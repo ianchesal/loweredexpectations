@@ -1,4 +1,4 @@
-# encoding: utf-8
+# Encoding: utf-8
 require 'rubygems/dependency'
 require 'open3'
 require 'shellwords'
