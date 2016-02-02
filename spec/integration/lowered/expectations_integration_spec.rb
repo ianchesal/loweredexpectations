@@ -19,11 +19,11 @@ RSpec.describe LoweredExpectations do
 
   describe '.which' do
     it 'returns true when the executable is on the PATH' do
-      expect(LoweredExpectations.which tool).to be_truthy
+      expect(LoweredExpectations.which(tool)).to be_truthy
     end
 
     it 'raises an error when the executable is not on the PATH' do
-      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error
+      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error(LoweredExpectations::MissingExecutableError)
     end
   end
 end
