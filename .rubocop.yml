@@ -108,11 +108,6 @@ SelfAssignment:
 SignalException:
   Enabled: false
 
-# Offense count: 53
-# Cop supports --auto-correct.
-SingleSpaceBeforeFirstArg:
-  Enabled: false
-
 SpaceAroundOperators:
   Enabled: false
 
@@ -214,6 +209,9 @@ Style/EmptyLines:
 Style/EmptyLinesAroundAccessModifier:
   Enabled: false
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 Style/GuardClause:
   Enabled: false
 
@@ -302,10 +300,6 @@ Style/NumericLiterals:
   Enabled: false
 
 Metrics/ParameterLists:
-  Enabled: false
-
-Style/TrailingComma:
-  # EnforcedStyleForMultiline: comma
   Enabled: false
 
 Metrics/CyclomaticComplexity:
