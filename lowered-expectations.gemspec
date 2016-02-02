@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = LoweredExpectations::VERSION
   # For deploying alpha versions via Travis CI
   spec.version       = "#{spec.version}-alpha-#{ENV['TRAVIS_BUILD_NUMBER']}" if ENV['TRAVIS']
-  spec.authors       = ["Ian Chesal"]
+  spec.authors       = ["Ian Chesal", "Derek Tamsen"]
   spec.email         = ["ian.chesal@gmail.com"]
   spec.summary       = 'A library for testing versions of command line tools.'
   spec.description   = <<-END
