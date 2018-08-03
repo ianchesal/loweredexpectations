@@ -33,10 +33,6 @@ The following errors can be raised when using this Gem:
 
 I'm using Travis CI to build and test on every push to the public github repository. You can find the Travis CI page for this project here: https://travis-ci.org/ianchesal/loweredexpectations/
 
-### Branching in Git
-
-I'm using [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) for development in git via github. I've loved the branching model git-flow proposed from day one and the addon to git makes it very intuitive and easy to follow. I generally don't push my `feature/*` branches to the public repository; I do keep `development` and `master` up to date here though.
-
 ### TODO Work
 
 Please see [TODO.md](TODO.md) for the short list of big things I thought worth writing down.

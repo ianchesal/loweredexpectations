@@ -1,13 +1,10 @@
-# Encoding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lowered/expectations'
 
 Gem::Specification.new do |spec|
   spec.name          = "lowered-expectations"
   spec.version       = LoweredExpectations::VERSION
-  # For deploying alpha versions via Travis CI
-  spec.version       = "#{spec.version}-alpha-#{ENV['TRAVIS_BUILD_NUMBER']}" if ENV['TRAVIS']
   spec.authors       = ["Ian Chesal", "Derek Tamsen"]
   spec.email         = ["ian.chesal@gmail.com"]
   spec.summary       = 'A library for testing versions of command line tools.'

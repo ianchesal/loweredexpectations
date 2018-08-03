@@ -9,11 +9,11 @@ RSpec.describe LoweredExpectations do
     end
 
     it 'raises an error when the version pattern cannot be found in executable output' do
-      expect{LoweredExpectations.expect(tool, "~> 0.1", vpattern: 'notvalid')}.to raise_error
+      expect{LoweredExpectations.expect(tool, "~> 0.1", vpattern: 'notvalid')}.to raise_error(LoweredExpectations::VersionPatternError)
     end
 
     it 'raises an error when the version of the tool does not meet expectations' do
-      expect{LoweredExpectations.expect(tool, "~> 1000.0")}.to raise_error
+      expect{LoweredExpectations.expect(tool, "~> 1000.0")}.to raise_error(LoweredExpectations::IncompatibleVersionError)
     end
   end
 
