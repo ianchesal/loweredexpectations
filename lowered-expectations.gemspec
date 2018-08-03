@@ -4,7 +4,7 @@ require 'lowered/expectations'
 
 Gem::Specification.new do |spec|
   spec.name          = "lowered-expectations"
-  spec.version       = ENV['TRAVIS'] ? "#{spec.version}-alpha-#{ENV['TRAVIS_BUILD_NUMBER']}" : LoweredExpectations::VERSION
+  spec.version       = LoweredExpectations::VERSION
   spec.authors       = ["Ian Chesal", "Derek Tamsen"]
   spec.email         = ["ian.chesal@gmail.com"]
   spec.summary       = 'A library for testing versions of command line tools.'
