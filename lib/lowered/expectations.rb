@@ -1,11 +1,10 @@
-# Encoding: utf-8
 require 'rubygems/dependency'
 require 'open3'
 require 'shellwords'
 require 'pty'
 
 class LoweredExpectations
-  VERSION = '1.0.1'.freeze
+  VERSION = '1.0.2'.freeze
 
   class VersionPatternError < StandardError
   end
@@ -22,6 +21,7 @@ class LoweredExpectations
   def self.expect(executable, version, vopt: '--version', vpattern: '(\d+\.\d+\.\d+)')
     vstring = run! which(executable), vopt, quiet: true
     vmatch = /#{vpattern}/.match(vstring)
+    raise(VersionPatternError.new("unable to match #{vpattern} in version output #{vstring} from #{executable}")) unless vmatch
     verify_version(vmatch[0], version) || raise(VersionPatternError.new("unable to match #{vpattern} in version output #{vstring} from #{executable}"))
   end
 
@@ -59,7 +59,7 @@ class LoweredExpectations
         Process.wait(pid)
       end
     end
-    raise CommandExecutionError.new(stderr) unless status == 0
+    raise CommandExecutionError.new(stderr) unless status.zero?
     stdout
   end
   private_class_method :run!
