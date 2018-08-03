@@ -17,7 +17,7 @@ enforce a major version but allow any minor version above a certain value for a
 tool. If you use Gemfile's the syntax should look pretty familiary to you.
 END
   spec.homepage      = "https://github.com/ianchesal/loweredexpectations"
-  spec.license       = "Apache 2.0"
+  spec.license       = "Apache-2.0"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
