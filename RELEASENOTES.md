@@ -1,5 +1,12 @@
 # lowered-expectations Release Notes
 
+## 1.0.2
+
+* Updated rubocop library to cover CVE-2017-8418
+* Updated everything else while I was at it
+* Fixed everything that broke because of the updates
+* Updated Travis configuration to ensure we test against every 2.x release of ruby
+
 ## 1.0.1
 
 * Move development dependencies out of the gemspec into the gemfile.
