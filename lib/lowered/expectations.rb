@@ -48,6 +48,7 @@ class LoweredExpectations
     if quiet
       # Run without streaming std* to any screen
       stdout, stderr, status = Open3.capture3(cmd)
+      status = status.exitstatus
     else
       # Run but stream as well as capture stdout to the screen
       status = pty(cmd) do |r,w,pid|
