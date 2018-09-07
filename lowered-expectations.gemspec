@@ -5,7 +5,7 @@ require 'lowered/expectations'
 Gem::Specification.new do |spec|
   spec.name          = "lowered-expectations"
   spec.version       = LoweredExpectations::VERSION
-  spec.authors       = ["Ian Chesal", "Derek Tamsen"]
+  spec.authors       = ["Ian Chesal", "Derek Tamsen", "Grier Johnson"]
   spec.email         = ["ian.chesal@gmail.com"]
   spec.summary       = 'A library for testing versions of command line tools.'
   spec.description   = <<-END
