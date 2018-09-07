@@ -1,5 +1,9 @@
 # lowered-expectations Release Notes
 
+## 1.0.3
+
+* Bugfix for exitstatus checks when running in quiet mode
+
 ## 1.0.2
 
 * Updated rubocop library to cover CVE-2017-8418
