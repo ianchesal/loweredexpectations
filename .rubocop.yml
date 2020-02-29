@@ -5,6 +5,9 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
+AllCops:
+  TargetRubyVersion: 2.3
+
 # Offense count: 6
 AmbiguousOperator:
   Enabled: false
@@ -51,13 +54,13 @@ FormatString:
 
 # Offense count: 9
 # Cop supports --auto-correct.
-IndentArray:
+Layout/FirstArrayElementIndentation:
   Enabled: false
 
 # Offense count: 261
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-IndentHash:
+Layout/FirstHashElementIndentation:
   Enabled: false
 
 # Offense count: 3
@@ -133,7 +136,7 @@ SpecialGlobalVars:
 
 # Offense count: 5
 # Cop supports --auto-correct.
-StringConversionInInterpolation:
+Lint/RedundantStringCoercion:
   Enabled: false
 
 StringLiterals:
@@ -164,22 +167,19 @@ Layout/AccessModifierIndentation:
 Naming/AccessorMethodName:
   Enabled: false
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: false
 
 Metrics/BlockLength:
   Enabled: false
 
 Metrics/BlockNesting:
-  Enabled: false
-
-Style/BracesAroundHashParameters:
   Enabled: false
 
 Layout/CaseIndentation:
@@ -242,9 +242,6 @@ Style/MultilineIfThen:
 Style/MultilineTernaryOperator:
   Enabled: false
 
-Style/MultilineTernaryOperator:
-  Enabled: false
-
 Style/NilComparison:
   Enabled: false
 
@@ -278,7 +275,7 @@ Layout/SpaceAroundEqualsInParameterDefault:
 Layout/SpaceInsideParens:
   Enabled: false
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: false
 
 Style/TrivialAccessors:
@@ -290,7 +287,7 @@ Style/WhileUntilDo:
 Style/WhileUntilModifier:
   Enabled: false
 
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Enabled: false
 
 Layout/ClosingHeredocIndentation:
@@ -340,3 +337,12 @@ UselessAssignment:
 
 WordArray:
   Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
