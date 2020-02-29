@@ -1,5 +1,11 @@
 # lowered-expectations Release Notes
 
+## 1.1.0
+
+* Updated development dependencies to avoid CVEs
+* Updated cops
+* Dropped support for Ruby 2.0, 2.1 and 2.2
+
 ## 1.0.3
 
 * Bugfix for exitstatus checks when running in quiet mode

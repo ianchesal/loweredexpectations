@@ -39,4 +39,4 @@ Please see [TODO.md](TODO.md) for the short list of big things I thought worth w
 
 ## Contact Me
 
-Questions or comments about `packer-config`? Hit me up at ian.chesal@gmail.com or ianc@squareup.com.
+Questions or comments about `LoweredExpectations`? Hit me up at ian.chesal@gmail.com.
