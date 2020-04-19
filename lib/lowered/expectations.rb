@@ -2,7 +2,9 @@ require 'rubygems/dependency'
 require 'open3'
 require 'shellwords'
 require 'pty'
+require 'English'
 
+# The main LoweredExpectations class
 class LoweredExpectations
   VERSION = '1.1.0'.freeze
 
@@ -52,8 +54,8 @@ class LoweredExpectations
       status = status.exitstatus
     else
       # Run but stream as well as capture stdout to the screen
-      status = pty(cmd) do |r,w,pid|
-        while !r.eof?
+      status = pty(cmd) do |r,_,pid|
+        until r.eof?
           c = r.getc
           stdout << c
           $stdout.write c.to_s
@@ -76,7 +78,7 @@ class LoweredExpectations
 
   def self.pty(cmd, &block)
     PTY.spawn(cmd, &block)
-    $?.exitstatus
+    $CHILD_STATUS.exitstatus
   end
   private_class_method :pty
 end

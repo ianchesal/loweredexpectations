@@ -5,15 +5,15 @@ RSpec.describe LoweredExpectations do
 
   describe '.expect' do
     it 'returns true when the executable exists and the version matches' do
-      expect(LoweredExpectations.expect(tool, "~> 7.0")).to be_truthy
+      expect(LoweredExpectations.expect(tool, '~> 7.0')).to be_truthy
     end
 
     it 'raises an error when the version pattern cannot be found in executable output' do
-      expect{LoweredExpectations.expect(tool, "~> 0.1", vpattern: 'notvalid')}.to raise_error(LoweredExpectations::VersionPatternError)
+      expect { LoweredExpectations.expect(tool, '~> 0.1', vpattern: 'notvalid') }.to raise_error(LoweredExpectations::VersionPatternError)
     end
 
     it 'raises an error when the version of the tool does not meet expectations' do
-      expect{LoweredExpectations.expect(tool, "~> 1000.0")}.to raise_error(LoweredExpectations::IncompatibleVersionError)
+      expect { LoweredExpectations.expect(tool, '~> 1000.0') }.to raise_error(LoweredExpectations::IncompatibleVersionError)
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe LoweredExpectations do
     end
 
     it 'raises an error when the executable is not on the PATH' do
-      expect{LoweredExpectations.which 'sometoolthatdoesnotexist'}.to raise_error(LoweredExpectations::MissingExecutableError)
+      expect { LoweredExpectations.which 'sometoolthatdoesnotexist' }.to raise_error(LoweredExpectations::MissingExecutableError)
     end
   end
 
@@ -39,12 +39,12 @@ RSpec.describe LoweredExpectations do
     end
 
     it 'raises an error when the executable returns non-zero' do
-      expect{LoweredExpectations.send('run!', tool, '--versssion')}
+      expect { LoweredExpectations.send('run!', tool, '--versssion') }
         .to raise_error(LoweredExpectations::CommandExecutionError)
     end
 
     it 'raises an error when the executable returns non-zero in quiet mode' do
-      expect{LoweredExpectations.send('run!', tool, '--versssion', quiet: true)}
+      expect { LoweredExpectations.send('run!', tool, '--versssion', quiet: true) }
         .to raise_error(LoweredExpectations::CommandExecutionError)
     end
   end

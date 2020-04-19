@@ -3,10 +3,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lowered/expectations'
 
 Gem::Specification.new do |spec|
-  spec.name          = "lowered-expectations"
+  spec.name          = 'lowered-expectations'
   spec.version       = LoweredExpectations::VERSION
-  spec.authors       = ["Ian Chesal", "Derek Tamsen", "Grier Johnson"]
-  spec.email         = ["ian.chesal@gmail.com"]
+  spec.authors       = ['Ian Chesal', 'Derek Tamsen', 'Grier Johnson']
+  spec.email         = ['ian.chesal@gmail.com']
   spec.summary       = 'A library for testing versions of command line tools.'
   spec.description   = <<-END
 A Ruby gem that lets you test for the presence of command line tools and ensure
@@ -16,12 +16,12 @@ It uses the gem system's version matching semantics so you can do things like
 enforce a major version but allow any minor version above a certain value for a
 tool. If you use Gemfile's the syntax should look pretty familiary to you.
 END
-  spec.homepage      = "https://github.com/ianchesal/loweredexpectations"
-  spec.license       = "Apache-2.0"
+  spec.homepage      = 'https://github.com/ianchesal/loweredexpectations'
+  spec.license       = 'Apache-2.0'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.3'
 end
